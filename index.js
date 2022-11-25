@@ -89,10 +89,10 @@ async function run() {
 
 
         app.delete('/reviews/:id', async (req, res) => {
-            const quaryid = req.params.id
+            const users = req.params.id
 
 
-            const result = await reviewsCollection.deleteOne({ _id: ObjectId(quaryid) })
+            const result = await reviewsCollection.simpleNode({ _id: ObjectId(users) })
 
 
             res.send(result)
